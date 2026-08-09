@@ -1,0 +1,22 @@
+{
+  "name": "Frontend Application Dev Environment",
+  "build": {
+    "dockerfile": "../frontend_files/Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.live-server"
+      ]
+    }
+  },
+  "forwardPorts": [8501],
+  "postCreateCommand": "pip install -r frontend_files/requirements.txt",
+  "workspaceFolder": "/workspaces/customer-churn-predictor-app/frontend_files"
+}
