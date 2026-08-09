@@ -1,0 +1,21 @@
+{
+  "name": "Backend Application Dev Environment",
+  "build": {
+    "dockerfile": "../backend_files/Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "forwardPorts": [7860],
+  "postCreateCommand": "pip install -r backend_files/requirements.txt",
+  "workspaceFolder": "/workspaces/customer-churn-predictor-app/backend_files"
+}
